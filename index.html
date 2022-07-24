@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .subject {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1>Tính điểm ĐH khối D</h1>
+    <div  class="subject">
+        <span>Môn Toán</span><input type="text" name="" id="math" style="margin-left:10px">
+    </div>
+    <div  class="subject">
+        <span>Môn Văn</span><input type="text" name="" id="literature" style="margin-left:10px"></br>
+    </div>
+    <div  class="subject">
+        <span>Môn Anh</span><input type="text" name="" id="english" style="margin-left:10px"></br>
+    </div>
+    <span>Khu vực</span>
+    <select name="" id="rate">
+        <option value="0.75">KV1</option>
+        <option value="0.5">KV2</option>
+        <option value="0.25">KV2-NT</option>
+        <option value="0">KV3</option>
+    </select></br>
+    <button onclick="check()" style="margin-top:20px">Tính điểm</button>
+    <p id="result_1"></p>
+    <p id="result_2"></p>
+    <p id="result_3"></p>
+    <p id="result_4"></p>
+    <script>
+        function check() {
+            let subject_1 = +document.getElementById('math').value;
+            let subject_2 = +document.getElementById('literature').value;
+            let subject_3 = +document.getElementById('english').value;
+
+            let rate = document.getElementById('rate').value;
+
+
+            switch (rate) {
+                case '0.75':
+                    let result_1 = subject_1 + subject_2 + subject_3 + 0.75;
+                    document.getElementById('result_1').innerHTML = 'Tổng điểm đại học khối D của bạn là: ' + result_1;
+                    break;
+                case '0.5':
+                    let result_2 = subject_1 + subject_2 + subject_3 + 0.5; 
+                    document.getElementById('result_2').innerHTML = 'Tổng điểm đại học khối D của bạn là: ' + result_2;
+                    break;
+                case '0.25':
+                    let result_3 = subject_1 + subject_2 + subject_3 + 0.25;
+                    document.getElementById('result_3').innerHTML = 'Tổng điểm đại học khối D của bạn là: ' + result_3;
+                    break;
+                case '0':
+                    let result_4 = subject_1 + subject_2 + subject_3 + 0;
+                    document.getElementById('result_4').innerHTML = 'Tổng điểm đại học khối D của bạn là: ' + result_4;
+                    break;
+            }
+        }
+    </script>
+</body>
+
+</html>
